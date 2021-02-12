@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  plex:
+    image: ghcr.io/linuxserver/plex
+    container_name: plex
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - VERSION=docker
+      # - PLEX_CLAIM=
+    volumes:
+      - ${PLEX_LIBRARY}:/config
+      - ${PLEX_TVSERIES}:/tv
+      - ${PLEX_MOVIES}:/movies
+    restart: unless-stopped
