@@ -7,8 +7,8 @@ services:
     restart: always
     
     environment:
-      TZ: 'Euproe/Berlin'            # set your timezone
-      WEBPASSWORD: 'setyourpassword' # set your password
+      TZ: '${PIHOLE_TIMEZONE}'          # set your timezone
+      WEBPASSWORD: '${PIHOLE_PASSWORD}' # set your password
     
     network_mode: host
     
