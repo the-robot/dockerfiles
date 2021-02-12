@@ -7,7 +7,7 @@ pihole-down:
 	docker stop pihole
 	docker rm pihole
 
-plex-up
+plex-up:
 	docker-compose -f plex.docker-compose.yml up -d
 
 plex-down:
