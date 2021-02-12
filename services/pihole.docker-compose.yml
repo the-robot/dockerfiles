@@ -18,7 +18,6 @@ services:
       - PROXY_LOCATION=pihole
       - DNS1=127.0.0.1
       - DNS2=1.1.1.1
-    network_mode: host
     volumes:
       - '~/.pihole/etc-pihole/:/etc/pihole/'
       - '~/.pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/'
