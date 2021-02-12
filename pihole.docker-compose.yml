@@ -1,1 +1,21 @@
+version: "3.8"
 
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    restart: always
+    
+    environment:
+      TZ: 'Euproe/Berlin'            # set your timezone
+      WEBPASSWORD: 'setyourpassword' # set your password
+    
+    network_mode: host
+    
+    volumes:
+      - './etc-pihole/:/etc/pihole/'
+      - './etc-dnsmasq.d/:/etc/dnsmasq.d/'
+    
+    # Required for the DHCP server
+    cap_add:
+      - NET_ADMIN
