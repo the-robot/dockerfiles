@@ -9,8 +9,10 @@ services:
       - PGID=1000
       - VERSION=docker
       # - PLEX_CLAIM=
+    ports:
+      - '32400:32400'
     volumes:
-      - ${PLEX_LIBRARY}:/config
-      - ${PLEX_TVSERIES}:/tv
-      - ${PLEX_MOVIES}:/movies
+      - '${PLEX_LIBRARY}:/config'
+      - '${PLEX_TVSERIES}:/tv'
+      - '${PLEX_MOVIES}:/movies'
     restart: unless-stopped
