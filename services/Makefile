@@ -1,4 +1,4 @@
 .PHONY: pihole
 
 pihole:
-	docker-compose up -f pihole.docker-compose.yml up -d
+	docker-compose -f pihole.docker-compose.yml up -d
