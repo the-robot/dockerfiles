@@ -3,19 +3,25 @@ version: "3.8"
 services:
   pihole:
     container_name: pihole
+    domainname: docker
+    hostname: pihole
     image: pihole/pihole:latest
-    restart: always
-    
+    ports:
+      - '53:53/tcp'
+      - '53:53/udp'
+      - '13270:80'
+      - '13271:443'
+    restart: unless-stopped
     environment:
-      TZ: '${PIHOLE_TIMEZONE}'          # set your timezone
-      WEBPASSWORD: '${PIHOLE_PASSWORD}' # set your password
-    
+      - TZ=${PIHOLE_TIMEZONE}          # set your timezone
+      - WEBPASSWORD=${PIHOLE_PASSWORD} # set your PIHOLE_PASSWORD
+      - PROXY_LOCATION=pihole
+      - DNS1=127.0.0.1
+      - DNS2=1.1.1.1
     network_mode: host
-    
     volumes:
       - '~/.pihole/etc-pihole/:/etc/pihole/'
       - '~/.pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/'
-    
     # Required for the DHCP server
     cap_add:
       - NET_ADMIN
