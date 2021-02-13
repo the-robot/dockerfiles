@@ -3,7 +3,7 @@ version: "3.8"
 services:
   calibre-web:
     image: ghcr.io/linuxserver/calibre-web
-    container_name: calibre-web
+    container_name: calibre
     environment:
       - PUID=1000
       - PGID=1000
