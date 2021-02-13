@@ -13,7 +13,7 @@ services:
       - '13271:443'
     restart: unless-stopped
     environment:
-      - TZ=${PIHOLE_TIMEZONE}          # set your timezone
+      - TZ=${SYS_TIMEZONE}             # set your timezone
       - WEBPASSWORD=${PIHOLE_PASSWORD} # set your PIHOLE_PASSWORD
       - PROXY_LOCATION=pihole
       - DNS1=127.0.0.1
