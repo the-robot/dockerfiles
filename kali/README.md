@@ -1,6 +1,6 @@
 [Original Author Repo](https://github.com/XaviTorello/kali-full-docker)
 
-> The copy here is updated to my needs.
+> The copy here is updated to my needs and fixed some outdated commands.
 
 # Kali Linux
 
